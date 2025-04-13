@@ -57,10 +57,5 @@ Clona este repositorio en tu máquina local usando el siguiente comando:
 git clone https://github.com/tu-usuario/tu-repositorio.git
 cd tu-repositorio
 
-### ***2. Configurar application.properties**
-Edita el archivo src/main/resources/application.properties con los detalles de tu instancia de IRIS:
- spring.datasource.url=jdbc:IRIS://192.168.100.5:1973/USER
- spring.datasource.username=superuser
- spring.datasource.password=1234
- spring.datasource.driver-class-name=com.intersystems.jdbc.IRISDriver
+
 
