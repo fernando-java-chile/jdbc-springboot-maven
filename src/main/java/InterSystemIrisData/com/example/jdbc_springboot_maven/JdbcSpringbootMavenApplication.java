@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.sql.DataSource;
 
+import InterSystemIrisData.com.example.jdbc_springboot_maven.Tables.TableCreatorFHIR_PACIENT_CL_1_9_2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -49,6 +50,7 @@ public class JdbcSpringbootMavenApplication implements CommandLineRunner {
 			}
 
 			// Insertar datos en la tabla
+			/*
 			for (int i = 0; i < 20; i++) {
 				try (PreparedStatement insertStmt = dbconnection.prepareStatement(
 						"INSERT INTO SQLUser.webinar (WebinarID, Creador, Fecha) VALUES (?, 'LUIS', CURRENT_TIMESTAMP)"
@@ -57,7 +59,9 @@ public class JdbcSpringbootMavenApplication implements CommandLineRunner {
 					insertStmt.execute();
 				}
 			}
-
+			 */
+			TableCreatorFHIR_PACIENT_CL_1_9_2 tableCreator = new TableCreatorFHIR_PACIENT_CL_1_9_2(dbconnection);
+			tableCreator.createFhirPacientTable();
 			System.out.println("Datos insertados correctamente.");
 
 		} catch (Exception e) {
@@ -66,17 +70,3 @@ public class JdbcSpringbootMavenApplication implements CommandLineRunner {
 		}
 	}
 }
-
-/*
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
-public class JdbcSpringbootMavenApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(JdbcSpringbootMavenApplication.class, args);
-	}
-
-}
-*/
